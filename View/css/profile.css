@@ -1,0 +1,29 @@
+div.card {
+  width: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+    height: 279px;
+    float: right;
+}
+
+div.header {
+    background-color: blueviolet;
+    color: white;
+    padding: 55px;
+    font-size: 40px;
+    
+}
+
+div.container {
+    padding: 30px;
+    text-align: center;
+}
+div.card1{
+    width: 750px;
+  background-color: whitesmoke;
+
+    height: 500px;
+}
+.detail{
+    float: left;
+}

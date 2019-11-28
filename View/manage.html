@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet"> 
+    <title>Manage apartment</title>
+    <link rel="shortcut icon" href="Pictures/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    
+     <link rel="stylesheet" href="../View/css/side.css">
+    <link rel="stylesheet" href="../View/css/style.css">
+    <script src="../Model/js/coustom.js"></script>
+    <meta charset="UTF-8">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    
+</head>
+<body background="">
+<nav class="navbar navbar-light bg-light justify-content-between">
+    <a class="navbar-brand" href="home2.html">
+    <img src="pictures/icon.png" width="50" height="50" class="icon" alt=""><Strong style="color: black">Smart Home</Strong>
+   </a>
+ 
+  <form class="form-inline">
+       
+   <span style="font-size:30px;cursor:pointer" onclick="openNav()" >&#x02261;&nbsp;Menu</span>
+  </form>
+</nav>
+    
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+<a href="../View/home2.html">Home</a>
+     <a href="../View/user.php"> Profile</a>
+     <a href="../View/dashboard.html">Dashboard</a>
+  <a href="../View/view.php">View appartment</a>
+  <a href="../View/manage.html">Manage appartment</a>
+    <a href="../Controller/logout.php">Logout</a>
+<a href="../View/contactlog.html">Contact us</a>
+
+</div>
+   
+
+    <script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "100%";
+}
+
+/* Close/hide the sidenav */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+} 
+    </script>
+    
+
+    
+
+<form action ="../Controller/capture.php" method="POST">
+
+<div class="outer-div" id="manage" style=" height: 2000px; background-color: rgb(179, 217, 255)">
+  
+  <center>
+       <div class="card" id="innermanage" >
+           
+
+<h2 style="text-align: center" > Add New Rooms & Sensors</h2>
+           <hr>
+
+
+	
+	<center>Number of rooms: <input type="text" name="NumberOf" placeholder="Enter or choose number of rooms" id="NumberOf"></center><br>
+	<table id="studenttable">
+<a href ="#" id="demo" style="margin-left: 50px;" >Add new</a>
+	  <hr style="background-color: royalblue">
+         <h4 style="color: blueviolet">Rooms& sensors</h4>
+	</table>
+	 <hr style="background-color: lightseagreen">
+       
+
+       
+      <script>
+		//window.onload = function(){
+			var count=1;
+			
+			document.getElementById("demo").onclick = function() {addRow()};
+			function addRow() {
+				var number = document.getElementById("NumberOf").value;
+				for (var i =1; i<=number;i++)
+				{
+					var table = document.getElementById("studenttable");
+				    var row = table.insertRow(-1);
+     
+				    var cell1 = row.insertCell(0);
+             
+				    var cell2 = row.insertCell(1);
+
+				   
+				      
+				    var theDiv = document.createElement('div');
+              
+				    theDiv.setAttribute("class", "select");
+            
+				    var theSelect = document.createElement('select');
+				     
+				    theSelect.name = "select"+count;  // setting unique NAME
+				    theSelect.id = "select"+count;    // setting unique ID
+				     theSelect.required = "true";
+				    theSelect.setAttribute("class", "custom-select");
+				    // option "Select an option"
+				    var opt0 = document.createElement('option');
+				    opt0.value = "";
+                    //opt0.required = true;
+                    opt0.optSelected = true;
+				    opt0.text = "Select a Room";
+				    theSelect.appendChild(opt0);
+				    // option "Male"
+				    var opt1 = document.createElement('option');
+				    opt1.value = "Kitchen";
+				    opt1.text = "Kitchen";
+				    theSelect.appendChild(opt1);
+				    // option "Female"
+				    var opt2 = document.createElement('option');
+				    opt2.value = "living";
+				    opt2.text = "living";
+				    theSelect.appendChild(opt2); 
+                     var opt3 = document.createElement('option');
+				    opt3.value = "bedroom";
+				    opt3.text = "bedroom";
+				    theSelect.appendChild(opt3);
+				    // option "Female"
+				    var opt4 = document.createElement('option');
+				    opt4.value = "bathroom";
+				    opt4.text = "bathroom";
+				    theSelect.appendChild(opt4); 
+                     var opt5 = document.createElement('option');
+				    opt5.value = "Kitchen2";
+				    opt5.text = "Kitchen2";
+				    theSelect.appendChild(opt5);
+				    // option "Female"
+				    var opt6 = document.createElement('option');
+				    opt6.value = "livin2";
+				    opt6.text = "livin2";
+				    theSelect.appendChild(opt6); 
+                    
+                     var opt7 = document.createElement('option');
+				    opt7.value = "bedroom2";
+				    opt7.text = "bedroom2";
+				    theSelect.appendChild(opt7);
+				    // option "Female"
+				    var opt8 = document.createElement('option');
+				    opt8.value = "bathroom2";
+				    opt8.text = "bathroom2";
+				    theSelect.appendChild(opt8); 
+                     var opt9 = document.createElement('option');
+				    opt9.value = "kitchen3";
+				    opt9.text = "kitchen3";
+				    theSelect.appendChild(opt9);
+				    // option "Female"
+				    var opt10 = document.createElement('option');
+				    opt10.value = "living3";
+				    opt10.text = "living3";
+				    theSelect.appendChild(opt10); 
+                    
+                     var opt11 = document.createElement('option');
+				    opt11.value = "bedroom3";
+				    opt11.text = "bedroom3";
+				    theSelect.appendChild(opt11);
+				    // option "Female"
+				    var opt12 = document.createElement('option');
+				    opt12.value = "bathroom3";
+				    opt12.text = "bathroom3";
+				    theSelect.appendChild(opt12); 
+				    
+				    theDiv.appendChild(theSelect);
+				    cell1.appendChild(theDiv);
+
+
+                    
+                  var theSelect1 = document.createElement('select');
+				     
+				    theSelect1.name = "select1"+count+"[]";  // setting unique NAME
+				    theSelect1.id = "select1"+count;    // setting unique ID
+				    theSelect1.multiple = "true";
+                     theSelect1.required = "true";
+				    theSelect1.setAttribute("class", "custom-select");
+				    // option "Select an option"
+				    var opt0 = document.createElement('option');
+				    opt0.value = "";
+                    opt0.disabled = true;
+                    
+				    opt0.text = "Select multiple sensors using your control Button";
+				    theSelect1.appendChild(opt0);
+				    // option "Male"
+				    var opt1 = document.createElement('option');
+				    opt1.value = "Temperature";
+				    opt1.text = "Temperature";
+				    theSelect1.appendChild(opt1);
+				    // option "Female"
+				    var opt2 = document.createElement('option');
+				    opt2.value = "Humidity";
+				    opt2.text = "Humidity";
+				    theSelect1.appendChild(opt2); 
+                     var opt3 = document.createElement('option');
+				    opt3.value = "Alarm";
+				    opt3.text = "Alarm";
+				    theSelect1.appendChild(opt3);
+				    // option "Female"
+				    var opt4 = document.createElement('option');
+				    opt4.value = "Shutter";
+				    opt4.text = "Shutter";
+				    theSelect1.appendChild(opt4); 
+                     var opt5 = document.createElement('option');
+				    opt5.value = "Doors";
+				    opt5.text = "Doors";
+				    theSelect1.appendChild(opt5);
+				    // option "Female"
+				    var opt6 = document.createElement('option');
+				    opt6.value = "Motion";
+				    opt6.text = "Motion";
+				    theSelect1.appendChild(opt6); 
+                    
+                     var opt7 = document.createElement('option');
+				    opt7.value = "Camera";
+				    opt7.text = "Camera";
+				    theSelect1.appendChild(opt7);
+				    // option "Female"
+				    var opt8 = document.createElement('option');
+				    opt8.value = "Lights";
+				    opt8.text = "Lights";
+				    theSelect1.appendChild(opt8); 
+                     
+				    theSelect1.setAttribute("required", "true");
+				    theDiv.appendChild(theSelect1);
+				    cell2.appendChild(theDiv);
+ count++;
+				   
+                
+     
+				}			
+			}
+
+		//}
+		
+	</script>
+
+    
+   
+
+
+
+    </div>
+  
+     
+    
+  
+      
+    <br><br><br>
+ <div class="row" style="float: right">
+    <div class="col">
+         <a href="../View/dashboard.html" class="btn btn-outline-primary my-2 my-sm-0" type="submit" style="margin-right: 16px" >Cancel</a>
+    <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Save</button>
+        
+    </div>
+   
+    </div>
+     </center>
+    </div>
+    </form>
+   
+<hr class="style18">
+        <footer>    
+  
+    <div class="copyright" >
+  <div>
+    <div class="col-md-6">
+      <p>© 2017 - All Rights with Smart Home</p>
+    </div>
+    <div class="col-md-6">
+      <ul class="bottom_ul">
+        
+      
+       
+      </ul>
+    </div>
+  </div>
+</div>
+  
+        </footer>
+
+
+</body>
+</html>

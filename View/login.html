@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login:</title>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">     
+    <title>Sign up</title>
+	 <link rel="shortcut icon" href="../View/Pictures/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="../View/css/style.css">
+    <script src="../Model/js/coustom.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-dark justify-content-between">
+    <a class="navbar-brand" href="../View/home.html">
+    <img src="../View/pictures/icon.png" width="50" height="50" class="icon" alt=""><Strong style="color: whitesmoke">Smart Home</Strong>
+   </a>
+ 
+  <form class="form-inline">
+       
+    <a href="../View/home.html" class="btn btn-outline-danger my-2 my-sm-0 animated rollIn" type="submit">Home</a>
+  </form>
+</nav>
+ <div class="main">
+    <h2 style="margin-top: -50px;">Login:</h2>
+<br>
+     <div class="container">
+             
+                  
+  <div class="row"  >
+    <div class="col" >
+         <form action="../Controller/log_check.php" method="post">
+      <lable style="float: left"><strong>E-mail:</strong></lable> <input name="mail" type="email" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required><br>
+       <lable style="float: left"><strong>Password: </strong></lable> <input name="pass" type="password" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required>
+        
+        <hr>
+
+        <button type="submit"class="btn btn-outline-danger btn-lg btn-block" >Login</button>
+        <br>
+    <a href=""><p style="float: right">Forgot password?</p></a>
+       <a href="../View/home.html" type="button" class="btn btn-outline-warning" style="margin-left: 480px;">Cancel</a>
+  </form>
+      </div>
+         </div>
+                 
+                  
+     </div>
+       
+ </div>
+    <hr class="style18">
+    <footer>    
+  
+    <div class="copyright">
+  <div class="container">
+    <div class="col-md-6">
+      <p>© 2017 - All Rights with Smart Home</p>
+    </div>
+    <div class="col-md-6">
+      <ul class="bottom_ul">
+        
+      
+       
+      </ul>
+    </div>
+  </div>
+</div>
+  
+        </footer>
+</body>
+</html>
